@@ -271,7 +271,7 @@ docker image ls
 
 ![alt text](
 
-GTFOBins consists of commands we can use with docker in order to escalate our privileges to root. [GTFOBins Docker](gtfobins https://gtfobins.github.io/gtfobins/docker/)  
+GTFOBins consists of commands we can use with docker in order to escalate our privileges to root. [GTFOBins Docker](https://gtfobins.github.io/gtfobins/docker/)  
 So, we can exploit Alpine image and mount the root directory in a docker container which will prompt us the root shell.
 
 Exploit the docker container to mount the root filesystem.
