@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Lab Setup](#lab-setup)
-- [Step 1 - Reconnaissance](#step-1---reconnaissance)
+- [Step 1 - Reconnaissance](#step-1-reconnaissance)
 - [Step 2 - Find Your IP](#step-2---find-your-ip)
 - [Step 3 - Discover Target on Network](#step-3---discover-target-machine)
 - [Step 4 - Port Scan](#step-4---port-scanning)
