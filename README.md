@@ -2,19 +2,19 @@
 
 ## Table of Contents
 
-- [Lab Setup](#lab-setup)
-- [Step 1 - Reconnaissance](#step-1-reconnaissance)
-- [Step 2 - Find Your IP](#step-2---find-your-ip)
-- [Step 3 - Discover Target on Network](#step-3---discover-target-machine)
-- [Step 4 - Port Scan](#step-4---port-scanning)
-- [Step 5 - Web Enumeration](#step-5---web-enumeration)
-- [Step 6 - Hidden Directory Discovery](#step-6---explore-hidden-directory)
-- [Step 7 - FTP Access](#step-7--login-via-ftp)
-- [Step 8 - SSH Brute Force](#step-8--ssh-brute-force)
-- [Step 9 - Initial Access](#step-9--ssh-login)
-- [Step 10 - Horizontal Privilege Escalation](#step-10--horizontal-privilege-escalation-to-jerry)
-- [Step 11 - Root Privilege Escalation](#step-11--vertical-privilege-escalation)
-- [Conclusion](#conclusion)
+- [Lab Setup](#desktop_computer-lab-setup)
+- [Step 1 - Reconnaissance](#mag-step-1---reconnaissance)
+- [Step 2 - Find Your IP](#globe_with_meridians-step-2---find-your-ip)
+- [Step 3 - Discover Target Machine](#satellite-step-3---discover-target-machine)
+- [Step 4 - Port Scanning](#door-step-4---port-scanning)
+- [Step 5 - Web Enumeration](#earth_africa-step-5---web-enumeration)
+- [Step 6 - Hidden Directory Discovery](#card_index_dividers-step-6---explore-hidden-directory)
+- [Step 7 - FTP Access](#file_folder-step-7--login-via-ftp)
+- [Step 8 - SSH Brute Force](#old_key-step-8--ssh-brute-force)
+- [Step 9 - Initial Access](#computer-step-9--ssh-login)
+- [Step 10 - Horizontal Privilege Escalation](#arrow_up-step-10--horizontal-privilege-escalation-to-jerry)
+- [Step 11 - Root Privilege Escalation](#whale-step-11--vertical-privilege-escalation)
+- [Conclusion](#books-conclusion)
 
 A step-by-step penetration testing walkthrough for the **BlueMoon 2021 VulnHub machine**.
 
