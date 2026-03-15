@@ -22,7 +22,6 @@ A step-by-step penetration testing walkthrough for the **BlueMoon 2021 VulnHub m
 
 ## :desktop_computer: Lab Setup
 
-- Platform: VulnHub
 - Attacker Machine: Kali Linux
 - Target Machine: BlueMoon
 - Network: Host-Only Adapter
@@ -34,7 +33,7 @@ A step-by-step penetration testing walkthrough for the **BlueMoon 2021 VulnHub m
   - ftp
   - ssh
 
-Download the machine here: (https://www.vulnhub.com/entry/bluemoon-2021,679/)  
+[Download from VulnHub](https://www.vulnhub.com/entry/bluemoon-2021,679/)  
 Import and start it in **VirtualBox**  
 ![alt text](
 
@@ -272,7 +271,7 @@ docker image ls
 
 ![alt text](
 
-GTFOBins consists of commands we can use with docker in order to escalate our privileges to root. [gtfobins https://gtfobins.github.io/gtfobins/docker/](gtfobins https://gtfobins.github.io/gtfobins/docker/)  
+GTFOBins consists of commands we can use with docker in order to escalate our privileges to root. [GTFOBins Docker](gtfobins https://gtfobins.github.io/gtfobins/docker/)  
 So, we can exploit Alpine image and mount the root directory in a docker container which will prompt us the root shell.
 
 Exploit the docker container to mount the root filesystem.
