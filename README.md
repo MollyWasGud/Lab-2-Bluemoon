@@ -26,8 +26,8 @@ A step-by-step penetration testing walkthrough for the **BlueMoon 2021 VulnHub m
 - Target Machine: BlueMoon
 - Network: Host-Only Adapter
 - Tools Used:
-  - nmap
   - netdiscover
+  - nmap
   - gobuster
   - hydra
   - ftp
@@ -261,7 +261,8 @@ id
 
 ![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/iddocker.png)
 
-> User **jerry** is in the **docker** group.
+> User `jerry` is in the `docker` group.
+
 > Users in the docker group can run containers with root privileges.
 
 List docker images.
@@ -274,6 +275,18 @@ docker image ls
 
 GTFOBins consists of commands we can use with docker in order to escalate our privileges to root. [GTFOBins Docker](https://gtfobins.github.io/gtfobins/docker/)  
 So, we can exploit Alpine image and mount the root directory in a docker container which will prompt us the root shell.
+
+> This Docker command runs a container using the Alpine Linux image (`alpine`). Here's what each part of the command does:
+
+> `-v /:/mnt` : This mounts the host's root directory (`/`) to the `/mnt` directory within the container. This allows the container to access files and directories on the host system.
+
+> `--rm` : This flag specifies that the container should be automatically removed when it exits.
+
+> `-it` : This combination of flags (`-i` for interactive and `-t` for terminal) allocates a pseudo-TTY and allows interaction with the container.
+
+> `alpine` : This is the name of the Docker image being used to create the container.
+
+> `chroot /mnt sh` : This command is executed inside the container. It changes the root directory to `/mnt`, effectively making the host's root directory the root directory within the container, and then starts an interactive shell (`sh`) within that context.
 
 Exploit the docker container to mount the root filesystem.
 
