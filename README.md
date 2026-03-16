@@ -99,8 +99,8 @@ Gobuster is used to perform directory brute-forcing on the web server to discove
 ```bash
 gobuster dir -u http://192.168.56.109 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t10 --timeout 30s
 ```
-The ``` -t10``` option increases the scanning speed by allowing multiple requests at the same time.  
-The ```--timeout 30s``` option prevents the scan from waiting too long for slow server responses.
+> The ``` -t10``` option increases the scanning speed by allowing multiple requests at the same time.  
+> The ```--timeout 30s``` option prevents the scan from waiting too long for slow server responses.
 
 ![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/gobuster.png)
 > Discovered: `/hidden_text`
