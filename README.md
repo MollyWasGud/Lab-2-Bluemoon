@@ -44,7 +44,7 @@ Locating the target IP within the local network range.
 ```bash
 netdiscover
 ```
-![alt text](
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/Recon%20netdiscover.png)
 
 ---
 
@@ -53,7 +53,7 @@ Check the IP address of the Kali Linux attacker machine.
 ```bash
 ifconfig
 ```
-![alt text](
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/ifconfig.png)
 > Attacker machine's IP address (`192.168.56.108`)
 
 ---
