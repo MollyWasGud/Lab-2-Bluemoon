@@ -251,7 +251,7 @@ Upgrade to interactive shell.
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/phyton.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/python.png)
 
 Check group membership.
 
