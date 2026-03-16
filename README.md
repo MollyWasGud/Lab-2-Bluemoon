@@ -35,7 +35,7 @@ A step-by-step penetration testing walkthrough for the **BlueMoon 2021 VulnHub m
 
 [Download from VulnHub](https://www.vulnhub.com/entry/bluemoon-2021,679/)  
 Import and start it in **VirtualBox**  
-![alt text](
+![alt text](image Bluemoon/Bluemoon.png)
 
 ---
 
